@@ -5,10 +5,10 @@ import { ErrorMessageMode } from '/#/axios';
 import { ContentTypeEnum } from '/@/enums/httpEnum';
 
 enum Api {
-  Login = '/login',
-  Logout = '/logout',
-  GetUserInfo = '/getUserInfo',
-  GetPermCode = '/getPermCode',
+  Login = '/ark-identify/login',
+  Logout = '/ark-identify/logout',
+  GetUserInfo = '/ark-userinfo',
+  GetPermCode = '/ark-userinfo/permissionCode',
 }
 
 /**
@@ -18,7 +18,7 @@ export function loginApi(params: LoginParams, mode: ErrorMessageMode = 'modal') 
   return defHttp.post<LoginResultModel>(
     {
       url: Api.Login,
-      headers: { 'Content-Type': ContentTypeEnum.FORM_DATA },
+      headers: { 'Content-Type': ContentTypeEnum.FORM_URLENCODED },
       params,
     },
     {

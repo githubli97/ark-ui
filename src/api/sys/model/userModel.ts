@@ -7,7 +7,7 @@ export interface LoginParams {
 }
 
 export interface RoleInfo {
-  roleName: string;
+  authority: string;
   value: string;
 }
 
@@ -15,24 +15,33 @@ export interface RoleInfo {
  * @description: Login interface return value
  */
 export interface LoginResultModel {
-  userId: string | number;
-  token: string;
-  role: RoleInfo;
+  homePath: string;
+  authorities: RoleInfo[];
+  // 用户id
+  id: string | number;
+  // 用户名
+  username: string;
+  // 真实名字
+  realName: string;
+  // 头像
+  userProfilePicture: string;
+  // 介绍
+  desc?: string;
 }
 
 /**
  * @description: Get user information return value
  */
 export interface GetUserInfoModel {
-  roles: RoleInfo[];
+  authorities: RoleInfo[];
   // 用户id
-  userId: string | number;
+  id: string | number;
   // 用户名
   username: string;
   // 真实名字
   realName: string;
   // 头像
-  avatar: string;
+  userProfilePicture: string;
   // 介绍
   desc?: string;
 }

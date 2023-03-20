@@ -150,8 +150,8 @@
       }
     } catch (error) {
       createErrorModal({
-        title: t('sys.api.errorTip'),
-        content: error.message || t('sys.api.networkExceptionMsg'),
+        title: t('sys.api.operationFailed'),
+        content: t('sys.api.errMsg401'),
         getContainer: () => document.body.querySelector(`.${prefixCls}`) || document.body,
       });
     } finally {
